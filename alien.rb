@@ -24,13 +24,26 @@ class Alien
   end
 
   def fire(missiles)
-    missile = Missile.new(x, bottom_edge)
-    missile.launch(10)
-    missiles.add(missile)
+    missiles.add(new_missile)
   end
+
+  def new_missile
+    Missile.new({x: x, y: half_height, velocity: ordinance_velocity})
+  end
+
+  def ordinance_velocity
+    10
+  end
+
+  def muzzle_location
+    Vector.new(x, bottom_edge)
+  end
+
 
   def bottom_edge
     y + HEIGHT / 2
   end
 
 end
+
+Vector = Struct.new(:x, :y)

@@ -6,6 +6,10 @@ class MissileCollection
     @missiles = []
   end
 
+  def launch_for(ship)
+    add(Missile.new(ship.muzzle_location, ship.ordinance_velocity))
+  end
+
   def add(missile)
     missiles << missile
   end
