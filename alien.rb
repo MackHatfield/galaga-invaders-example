@@ -11,7 +11,17 @@ class Alien
     @location = Vector.new(200, 200)
   end
 
+  def muzzle_location
+    Vector.new(location.x, bottom_edge)
+  end
+
   def move
+  end
+
+  def add_missile_to(missile_collection)
+    missile = Missile.new(muzzle_location)
+    missile.launch(10)
+    missile_collection.add(missile)
   end
 
   def draw

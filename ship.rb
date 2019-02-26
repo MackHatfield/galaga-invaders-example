@@ -25,6 +25,12 @@ class Ship
     move(DEFAULT_VELOCITY)
   end
 
+  def add_missile_to(missile_collection)
+    missile = Missile.new(muzzle_location)
+    missile.launch(-10)
+    missile_collection.add(missile)
+  end
+
   def draw
     puts self
   end
