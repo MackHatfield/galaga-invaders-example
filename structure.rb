@@ -1,10 +1,14 @@
 class Structure
-
+  include Drawable
   DAMAGE = 1
 
   def initialize(args)
     @location = args.fetch[:location]
     @hit_points = args.fetch[:hit_points]
+    post_init(args)
+  end
+
+  def post_init(args)
   end
 
   def hit?(attacker)
@@ -20,4 +24,14 @@ class Structure
     @hit_points <= 0
   end
 
+end
+
+def module Drawable
+  def draw
+  end
+
+end
+
+def module Destroyable
+  
 end

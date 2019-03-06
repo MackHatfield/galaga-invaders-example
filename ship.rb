@@ -1,12 +1,6 @@
 class Ship < Structure
 
-  def initialize(args)
-    super
+  def post_init(args)
     @sprite = args.fetch[:sprite]
   end
-
-  def draw
-    # Draws the `sprite` at `location`
-  end
-
 end
