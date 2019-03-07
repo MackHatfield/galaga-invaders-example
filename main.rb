@@ -1,3 +1,4 @@
+require_relative 'ship'
 =begin
 Reflecting on Principle
 1) How are Ruby modules (and similar features from other langs)
@@ -13,3 +14,12 @@ Reflecting on Principle
     or those that include a module, override methods where they need to in order to
     satisfy their specializations
 =end
+
+args = {
+  hit_points: 1000,
+  sprite: 'SHIP'
+}
+
+test_ship = Ship.new(args)
+
+puts test_ship.location
